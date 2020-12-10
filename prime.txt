@@ -1,0 +1,43 @@
+
+
+package p1;
+
+public class Prime {
+	 public boolean prime(int x) {
+		  boolean flag=true;
+		for(int i=2;i<=x/2;i++) {
+		 if(x%i==0) {
+		 flag=false;
+		 break;
+		 }
+		}
+		  return flag;
+		 }
+}
+
+package p1;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+public class PrimeTest {
+	Prime x;
+	 @Before
+	 public void setUp() throws Exception {
+	 x=new PrimeNum();}
+
+	 @After
+	 public void tearDown() throws Exception {
+	 x=null;}
+
+	 @Test
+	 public void test() {
+	  assertTrue("Result",x.prime(5));
+	  assertEquals(false,x.prime(9));
+	 }
+
+}
+
+
+
